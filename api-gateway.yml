@@ -31,6 +31,10 @@ zuul:
       path: /recommendations/**
     orders-service:
       path: /orders/**
+      
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
 
 # Define the Eureka server that handles service registration
 eureka:
@@ -40,15 +44,6 @@ eureka:
     
 security:
   oauth2:
-    sso:
-      home:
-        secure: false
-        path: /,/**/*.html
-    client:
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
-      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
-      clientId: acme
-      clientSecret: acmesecret
     resource:
       jwt:
         keyUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token_key
