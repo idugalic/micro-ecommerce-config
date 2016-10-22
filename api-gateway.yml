@@ -31,7 +31,17 @@ zuul:
       path: /recommendations/**
     orders-service:
       path: /orders/**
-      
+    host:
+      connect-timeout-millis: 5000
+      socket-timeout-millis: 10000
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 10000
 
 # Define the Eureka server that handles service registration
 eureka:
