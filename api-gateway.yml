@@ -32,9 +32,6 @@ zuul:
     orders-service:
       path: /orders/**
       
-ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 60000
 
 # Define the Eureka server that handles service registration
 eureka:
