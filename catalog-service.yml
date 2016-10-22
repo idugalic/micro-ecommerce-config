@@ -11,6 +11,8 @@ spring:
   jpa:
    hibernate:
       ddl-auto: create-drop
+      
+security:
   oauth2:
     resource:
       jwt:
