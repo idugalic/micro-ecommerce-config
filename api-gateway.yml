@@ -44,6 +44,15 @@ eureka:
     
 security:
   oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html
+    client:
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
+      clientId: acme
+      clientSecret: acmesecret
     resource:
       jwt:
         keyUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token_key
