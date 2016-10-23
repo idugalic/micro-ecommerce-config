@@ -47,14 +47,12 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://192.168.59.103:8761/eureka/
+      defaultZone: http://eureka:8761/eureka/
       
 authserver:
-  hostname: 192.168.59.103
+  hostname: authserver
   port: 9999
   contextPath: uaa
-
-
 ---
 spring:
   profiles: cloud
